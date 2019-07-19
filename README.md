@@ -32,8 +32,8 @@ The emulator which is written in C++ can be found online. It provides a set of i
 ## The General Idea
 
 The main idea is to load and execute programs/processes, handle interrupts properly and perform context switching using Round Robin Scheduling. 
+ > **Note:** If you are to write new ASM files, you must use PROCESS_EXIT syscall, HLT instruction is used to halt emulator. 
 
- `** If you are to write new ASM files, you must use PROCESS_EXIT syscall, HLT instruction is used to halt emulator. `
 <p align="center"><img src="https://consequenceofsound.net/wp-content/uploads/2017/04/screen-shot-2017-04-01-at-7-47-18-pm.jpg?quality=80" width="500px"/></p>
 
 ## Workflow
@@ -58,7 +58,7 @@ There are 3 versions of kernel implemented.
 
 ## USAGE
 
- `There is makefile provided.  `
+  > **Note:** There is makefile provided.  
 ```sh
 ./GTUOS MicroKernel1.com 0
 
@@ -69,8 +69,9 @@ There are 3 versions of kernel implemented.
 
 0 or 1 indicates the DEBUG mode. In 0 DEBUG mode is off.
 
-The output is written into output.txt file.
+The output is written into output.txt file. Some programs may take some time to sober.
 
 ## How to compile Assembly files
 
 The assembly files can be converted to .com by using http://sensi.org/~svo/i8080. All that has to be done is to copy the code and paste it into the given link and save it by clicking “Make Beautiful Code”.
+
