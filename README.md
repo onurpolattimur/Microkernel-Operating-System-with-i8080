@@ -38,7 +38,7 @@ The main idea is to load and execute programs/processes, handle interrupts prope
 
 ## Workflow
 
-- Kernel loads a process into specific memory location. The memory location of each process is shown in the excel file “Memory Management.xsl”. In order to do so it uses a system call which is written in C++.
+- Kernel loads a process into specific memory location. The memory location of each process is shown in the excel file “**Memory Management.xsl**”. In order to do so it uses a system call which is written in C++.
 
 - The kernel keeps all the necessary information of a process in the Process Table.
 
@@ -47,7 +47,7 @@ The main idea is to load and execute programs/processes, handle interrupts prope
 - In context switching the kernel saves the current state of a process, stops executing it and selects an appropriate process from the memory using Round Robin Scheduling.
 
 - Whenever a context switching occurs the information of current process is shown to user using process table.
-
+***
 There are 3 versions of kernel implemented.
 
 **MicroKernel1:** In the first version of the kernel there are 3 different processes loaded in the memory and executed properly. The programs loaded are Sum.asm, Primes.asm and Collatz.asm. Each program has its own memory location assigned to it. The details of the memory allocation can be found in the Excel file provided.
@@ -58,13 +58,14 @@ There are 3 versions of kernel implemented.
 
 ## USAGE
 
-There is makefile provided.
-
+ `There is makefile provided.  `
+```sh
 ./GTUOS MicroKernel1.com 0
 
 ./GTUOS MicroKernel2.com 0
 
 ./GTUOS MicroKernel3.com 1
+```
 
 0 or 1 indicates the DEBUG mode. In 0 DEBUG mode is off.
 
