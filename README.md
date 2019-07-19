@@ -21,7 +21,7 @@ The emulator which is written in C++ can be found online. It provides a set of i
 | ------------- |:-------------:| :-----------|
 | **PRINT_B**      | 0x04 | Prints the contents of Register B as decimal. |
 | **READ_B**      | 0x07|   Reads an integer from the keyboard and stores it in Register B. |
-| **PRINT_MEM:** | 0x03      |   Prints the contents of memory pointed by B and C as decimal. |
+| **PRINT_MEM** | 0x03      |   Prints the contents of memory pointed by B and C as decimal. |
 | **READ_MEM** | 0x02 | Reads an integer from the keyboard and stores it into address Register BC.|
 | **PRINT_STR** | 0x01 | Prints the null terminated string at the address pointed by registers B and C.|
 | **READ_STR** | 0x08 | Reads the null terminated string from the keyboard and stores it in memory location pointer by registers B and C.|
@@ -29,9 +29,11 @@ The emulator which is written in C++ can be found online. It provides a set of i
 | **PROCESS_EXIT** | 0x09 | Causes operating system to clear and update the resources of the finished process and return control to the scheduler.|
 |  **SET_QUANTUM** | 0x06 | It changes the QUANTUM_TIME of the Round Robin Scheduler. | 
 
-## The Kernel
+## The General Idea
 
-The main idea is to load and execute programs/processes, handle interrupts properly and perform context switching using Round Robin Scheduling. HLT instruction is not supported, instead PROCESS_EXIT system call is used.
+The main idea is to load and execute programs/processes, handle interrupts properly and perform context switching using Round Robin Scheduling. 
+  `** If you are to write new ASM files, you must use PROCESS_EXIT syscall, HLT instruction is used to halt emulator. `
+<center><img src="https://consequenceofsound.net/wp-content/uploads/2017/04/screen-shot-2017-04-01-at-7-47-18-pm.jpg?quality=80" width="500px"/></center>
 
 ## Workflow
 
