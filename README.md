@@ -61,15 +61,16 @@ There are 3 versions of kernel implemented.
   > **Note:** There is makefile provided.  
 ```sh
 ./GTUOS MicroKernel1.com 0
-
-./GTUOS MicroKernel2.com 0
-
-./GTUOS MicroKernel3.com 1
 ```
-
+By default, the output goes to screen, if you want to write outputs to file you need make true usingFiles variable in gtuos.cpp.
+```sh
+usingFiles = true;
+```
 0 or 1 indicates the DEBUG mode. In 0 DEBUG mode is off.
 
-The output is written into output.txt file. Some programs may take some time to sober.
+In debug mode, you can see all the content of registers on every instruction executed.
+<p align="center">
+<img src="https://raw.githubusercontent.com/onurpolattimur/Microkernel-Operating-System-with-i8080/master/SS/terminal_1.png?token=AFQQRNJM7ER53S6QMVOWGYS5GMWB6"/></p>
 
 ## How to compile Assembly files
 
