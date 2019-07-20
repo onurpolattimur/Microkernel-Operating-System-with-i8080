@@ -61,10 +61,6 @@ The properties of MMU:
  -  The programs  use virtual addresses, so each address is translated 
 ***
 
- - Static scope, static binding, strongly typed, …
- - **Keywords**:
-	 -  `and, or, not, equal, append, concat, set, deffun, for, while, if, exit`
-	 - 
 The paging system will have the following features
  -  The page size is 1 KBytes 
  - The page table holds the following information for each page
