@@ -79,7 +79,7 @@ The paging system will have the following features
 
 - Sum.asm : It sums up the numbers from 1 to 20. 
 - Collatz.asm: It finds collatz sequence of each number less then 25. 
-	A Collatz sequence is a sequenceformed by iteratively applying the function defined for the Collatz problem to a given starting integer n, in which if 2|n , <img src="https://raw.githubusercontent.com/onurpolattimur/Microkernel-Operating-System-with-i8080/master/SS/ndivtwo.png?token=AFQQRNOB4SVBS7LBQM3OQUC5GM24S"/> and if not then <img src="https://raw.githubusercontent.com/onurpolattimur/Microkernel-Operating-System-with-i8080/master/SS/3naddone.png?token=AFQQRNORQLCGYJHQ4EGDE5K5GM3Y2"/>.<br>
+	A Collatz sequence is a sequenceformed by iteratively applying the function defined for the Collatz problem to a given starting integer n, in which if 2|n , <img src="https://raw.githubusercontent.com/onurpolattimur/Microkernel-Operating-System-with-i8080/master/SS/ndivtwo.png?token=AFQQRNKVFOMRF2FRAJBS23S5GM35K"/> and if not then <img src="https://raw.githubusercontent.com/onurpolattimur/Microkernel-Operating-System-with-i8080/master/SS/3naddone.png?token=AFQQRNORQLCGYJHQ4EGDE5K5GM3Y2"/>.<br>
 	`Example for 7:  22 11 34 17 52 26 13 40 20 10 5 16 8 4 2 1`
 - Primes.asm: It finds prime numbers in range of 1-1000. 
 In order to do this you have to use some tricks siince the i8080 processor is 8bits. We cannot represent numbers grater then 255 in i8080 architecure. The PRINT_B syscall writes the content of register B, the register B is 8 bits.  So the number to be printed has been divided to two pieces. There are detailed explanations in Primes.asm file.  But I want to show you the preview here.
