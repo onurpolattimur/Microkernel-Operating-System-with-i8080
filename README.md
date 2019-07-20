@@ -34,7 +34,7 @@ The emulator which is written in C++ can be found online. It provides a set of i
 The main idea is to load and execute programs/processes, handle interrupts properly and perform context switching using Round Robin Scheduling. 
  > **Note:** If you are to write new ASM files, you must use PROCESS_EXIT syscall, HLT instruction is used to halt emulator. 
 
-<p align="center"><img src="https://consequenceofsound.net/wp-content/uploads/2017/04/screen-shot-2017-04-01-at-7-47-18-pm.jpg?quality=80" width="500px"/></p>
+<p align="center"><img src="https://consequenceofsound.net/wp-content/uploads/2017/04/screen-shot-2017-04-01-at-7-47-18-pm.jpg?quality=80" width="300px"/></p>
 
 ## Workflow
 
@@ -48,19 +48,51 @@ The main idea is to load and execute programs/processes, handle interrupts prope
 
 - Whenever a context switching occurs the information of current process is shown to user using process table.
 ***
-There are 3 versions of kernel implemented.
 
-**MicroKernel1:** In the first version of the kernel there are 3 different processes loaded in the memory and executed properly. The programs loaded are Sum.asm, Primes.asm and Collatz.asm. Each program has its own memory location assigned to it. The details of the memory allocation can be found in the Excel file provided.
+-In the this version of kernel there are 3 different processes loaded in the memory and executed properly. The programs loaded are Sum.asm, Primes.asm and Collatz.asm. Each program has its own memory location assigned to it. The details of the memory allocation can be found in the Excel file provided.
 
-**MicroKernel2:** In the second version of the kernel a program is chosen randomly and loaded into memory 10 times. In other words, same program 10 different processes.
+## Virtual Memory and Paging
+The memory management unit supports page faults and performs page replacement algorithms. 
+The properties of MMU:
+ - Your computer has 8 KBytes of physical main memory 
+ - Each process has a virtual address space of 16 KBytes.  Therefore, even if you there is one process running, you will need many page replacements because your physical memory is not large enough to hold one process.
+ -  If an instruction does not find its operand in memory or it is not in memory, it causes a page fault 
+ -  The programs  use virtual addresses, so each address is translated 
+***
+The paging system will have the following features
+ -  The page size is 1 KBytes 
+ - The page table holds the following information for each page
+	 ◦ Modified bit 
+	 ◦ Referenced bit
+	 ◦ Present/absent
+	 ◦ Page frame number 
+	 ◦ Any other information needed by your system
+ - The FIFO method is used as page replacement algoritm. This algorithm is not very efficient but it is easy to implement. 
 
-**MicroKernel3:** In the third and last version of the kernel 2 programs are chosen and loaded 3 times.
+## About Assembly Files
+
+- Sum.asm : It sums up the numbers from 1 to 20. 
+- Collatz.asm: It finds collatz sequence of each number less then 25. 
+	A Collatz sequence is a sequenceformed by iteratively applying the function defined for the Collatz problem to a given starting integer n, in which if $2|n$ , $f⁢(n)=n/2$ and if not then $f⁢(n)=3⁢n+1$.
+	`Example for 7:  22 11 34 17 52 26 13 40 20 10 5 16 8 4 2 1`
+- Primes.asm: It finds prime numbers in range of 1-1000. 
+In order to do this you have to use some tricks siince the i8080 processor is 8bits. We cannot represent numbers grater then 255 in i8080 architecure. The PRINT_B syscall writes the content of register B, the register B is 8 bits.  So the number to be printed has been divided to two pieces. There are detailed explanations in Primes.asm file.  But I want to show you the preview here.
+```sh
+Print 16 bit decimal number to screen.
+This procedure can print only numbers between 0-2600.
+I print the number in two parts.
+    1516|_10_
+    -___| 151
+       6
+First print quatient and then print remainder.
+```
+	
 
 ## USAGE
 
   > **Note:** There is makefile provided.  
 ```sh
-./GTUOS MicroKernel1.com 0
+$ ./GTUOS MicroKernel1.com 0
 ```
 By default, the output goes to screen, if you want to write outputs to file you need make true usingFiles variable in gtuos.cpp.
 ```sh
