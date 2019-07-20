@@ -1,4 +1,5 @@
 
+
 # Operating System Kernel written in Assembly
 
 An operating system Kernel written in Intel i8080 assembly language.
@@ -59,14 +60,19 @@ The properties of MMU:
  -  If an instruction does not find its operand in memory or it is not in memory, it causes a page fault 
  -  The programs  use virtual addresses, so each address is translated 
 ***
+
+ - Static scope, static binding, strongly typed, …
+ - **Keywords**:
+	 -  `and, or, not, equal, append, concat, set, deffun, for, while, if, exit`
+	 - 
 The paging system will have the following features
  -  The page size is 1 KBytes 
  - The page table holds the following information for each page
-	 ◦ Modified bit 
-	 ◦ Referenced bit
-	 ◦ Present/absent
-	 ◦ Page frame number 
-	 ◦ Any other information needed by your system
+	 - Modified bit 
+	 - Referenced bit
+	 - Present/absent
+	 - Page frame number
+	 - Any other information needed by your system
  - The FIFO method is used as page replacement algoritm. This algorithm is not very efficient but it is easy to implement. 
 
 ## About Assembly Files
@@ -77,7 +83,7 @@ The paging system will have the following features
 	`Example for 7:  22 11 34 17 52 26 13 40 20 10 5 16 8 4 2 1`
 - Primes.asm: It finds prime numbers in range of 1-1000. 
 In order to do this you have to use some tricks siince the i8080 processor is 8bits. We cannot represent numbers grater then 255 in i8080 architecure. The PRINT_B syscall writes the content of register B, the register B is 8 bits.  So the number to be printed has been divided to two pieces. There are detailed explanations in Primes.asm file.  But I want to show you the preview here.
-```sh
+```
 Print 16 bit decimal number to screen.
 This procedure can print only numbers between 0-2600.
 I print the number in two parts.
