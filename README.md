@@ -109,6 +109,6 @@ In debug mode, you can see all the content of registers on every instruction exe
 ## How to compile Assembly files
 
 The assembly files can be converted to .com by using http://sensi.org/~svo/i8080. All that has to be done is to copy the code and paste it into the given link and save it by clicking “Make Beautiful Code”.
-
+***
  > *Note:* There is also a more advanced OS that supports simple Interprocess communication and synchronization. I will upload it as soon as I find some time.
 
