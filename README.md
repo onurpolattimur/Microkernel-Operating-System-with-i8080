@@ -108,7 +108,7 @@ usingFiles = true;
 
 In debug mode, you can see all the content of registers on every instruction executed.
 <p align="center">
-<img src="https://raw.githubusercontent.com/onurpolattimur/Microkernel-Operating-System-with-i8080/master/SS/terminal_1.png?token=AFQQRNJM7ER53S6QMVOWGYS5GMWB6"/></p>
+<img src="https://raw.githubusercontent.com/onurpolattimur/Microkernel-Operating-System-with-i8080/master/SS/terminal_1.png"/></p>
 
 ## How to compile Assembly files
 
