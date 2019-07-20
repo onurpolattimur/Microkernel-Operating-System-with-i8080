@@ -50,7 +50,7 @@ The main idea is to load and execute programs/processes, handle interrupts prope
 - Whenever a context switching occurs the information of current process is shown to user using process table.
 ***
 
--In the this version of kernel there are 3 different processes loaded in the memory and executed properly. The programs loaded are Sum.asm, Primes.asm and Collatz.asm. Each program has its own memory location assigned to it. The details of the memory allocation can be found in the Excel file provided.
+In this version of kernel there are 3 different processes loaded in the memory and executed properly. The programs loaded are Sum.asm, Primes.asm and Collatz.asm. Each program has its own memory location assigned to it. The details of the memory allocation can be found in the Excel file provided.
 
 ## Virtual Memory and Paging
 The memory management unit supports page faults and performs page replacement algorithms. 
